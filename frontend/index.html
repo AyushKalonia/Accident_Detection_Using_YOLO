@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accident Detection | YOLO</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h1>🚨 Accident Detection System</h1>
+            <p>AI-powered Road Accident Detection using YOLO</p>
+        </header>
+
+        <!-- MAIN CARD -->
+        <div class="card">
+
+            <!-- STATUS DASHBOARD -->
+            <section class="status-bar">
+                <div class="status-item">
+                    <span>Status</span>
+                    <div id="alertBadge" class="badge safe">No Accident</div>
+                </div>
+
+                <div class="status-item">
+                    <span>Confidence</span>
+                    <div class="meter">
+                        <div id="confidenceFill"></div>
+                    </div>
+                    <small id="confidenceText">0%</small>
+                </div>
+            </section>
+
+            <!-- UPLOAD SECTION -->
+            <section class="section">
+                <h2>Upload Image / Video</h2>
+
+                <div id="drop-area">
+                    <p>Drag & Drop files here<br><span>or click to upload</span></p>
+                    <input type="file" id="file-input" accept="image/*,video/*" multiple hidden />
+                </div>
+
+                <div id="file-list"></div>
+
+                <button class="btn primary" id="submitButton">
+                    Detect Accident
+                </button>
+            </section>
+
+            <!-- WEBCAM SECTION -->
+            <section class="section">
+                <h2>Live Webcam Detection</h2>
+
+                <div class="btn-group">
+                    <button class="btn success" id="startWebcam">Start Webcam</button>
+                    <button class="btn danger" id="stopWebcam">Stop Webcam</button>
+                </div>
+            </section>
+
+            <!-- OUTPUT -->
+            <section class="section">
+                <h2>Detection Output</h2>
+                <div id="error"></div>
+
+                <video id="videoElement" autoplay></video>
+                <canvas id="canvas" width="640" height="640"></canvas>
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>Built with YOLO • Flask • Computer Vision</p>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
